@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class SaleReport(models.Model):
     _inherit = "sale.report"
 
-    categ_id = fields.Many2one(string="Minor Group")
+    categ_id = fields.Many2one(string="Minor Group", comodel_name="product.category")
     mayor_group_id = fields.Many2one(string="Mayor Group", comodel_name="product.category", readonly=True)
     line_id = fields.Many2one(string="Line", comodel_name="product.category", readonly=True)
 
