@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_product_search_inherit_jasman_report" model="ir.ui.view">
+        <field name="name">view.order.product.search.inherit.jasman.report</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='Category']" position="attributes">
+                <attribute name="string">Minor Group</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='Category']" position="after">
+                <filter string="Mayor Group" name="mayor_group_id" context="{'group_by': 'mayor_group_id'}"/> 
+                <filter string="Line" name="line_id" context="{'group_by': 'line_id'}"/> 
+            </xpath>
+        </field>
+    </record>
+</odoo>
