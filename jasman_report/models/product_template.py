@@ -5,9 +5,9 @@ from odoo.exceptions import ValidationError
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    categ_id = fields.Many2one(string="Minor Group", comodel_name="product.category")
-    mayor_group_id = fields.Many2one(string="Mayor Group", comodel_name="product.category", compute="_compute_mayor_group_id", store=True)
-    line_id = fields.Many2one(string="Line", comodel_name="product.category", compute="_compute_line_id", store=True)
+    categ_id = fields.Many2one(comodel_name="product.category", string="Minor Group")
+    mayor_group_id = fields.Many2one(comodel_name="product.category", string="Mayor Group", compute="_compute_mayor_group_id", store=True)
+    line_id = fields.Many2one(comodel_name="product.category", string="Line", compute="_compute_line_id", store=True)
     multiple_attribute_values = fields.Boolean("Multiple Attribute Values", groups="sales_team.group_sale_manager")
 
     @api.depends("categ_id")
@@ -28,6 +28,6 @@ class ProductTemplate(models.Model):
     
     @api.constrains("attribute_line_ids", "multiple_attribute_values")
     def _check_attribute_line_ids(self):
-        for product_template in self:
-            if not product_template.multiple_attribute_values and product_template.attribute_line_ids.filtered(lambda l: l.value_count > 1):
-                raise ValidationError(_("You can't set more than one value per attribute."))
+        product_tmpl_ids = self.filtered(lambda _product_template: not _product_template.multiple_attribute_values and _product_template.attribute_line_ids.filtered(lambda l: l.value_count > 1))
+        if product_tmpl_ids:
+            raise ValidationError(_("You can't set more than one value per attribute."))
