@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_inherit_jasman" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.jasman</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='purchase']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="string">Sales</attribute>
+                </xpath>
+                <xpath expr="//group[@name='sale']" position="inside">
+                    <field name="channel_analytic_account_id"/>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page name="purchase_jasman" string="Purchases">
+                        <group>
+                            <group name="supplier" string="Supplier">
+                                <field name="jasman_id"/>
+                                <field name="property_account_payable_id"/>
+                                <field name="confirm_delivery"/>
+                                <field name="invoice_user_id"/>
+                                <field name="use_partner_credit_limit" invisible="1"/>
+                                <field name="guarantee_expiry" invisible="use_partner_credit_limit == False"/>
+                                <field name="supplier_credit_limit"/>
+                                <field name="supplier_payment_way"/>
+                                <field name="supplier_invoice_user_id"/>
+                                <field name="pay_day"/>
+                                <field name="payment_reference"/>
+                            </group>
+                            <group name="purchase" string="Purchase">
+                                <field name="buyer_id" domain="[('share', '=', False)]" widget="many2one_avatar_user"/>
+                                <field string="Payment Terms" name="property_supplier_payment_term_id" options="{'no_open': True, 'no_create': True}" groups="account.group_account_invoice,account.group_account_readonly"/>
+                                <div name="receipt_reminder" colspan="2" class="o_checkbox_optional_field" groups='purchase.group_send_reminder'>
+                                    <label for="receipt_reminder_email"/>
+                                    <field name="receipt_reminder_email"/>
+                                    <div invisible="not receipt_reminder_email">
+                                        <field name="reminder_date_before_receipt" class="oe_inline"/>
+                                        <span> day(s) before</span>
+                                    </div>
+                                </div>
+                                <field name="property_purchase_currency_id" options="{'no_create': True, 'no_open': True}" groups='base.group_multi_currency'/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="before">
+                    <page name="documents" string="Documents">
+                        <group>
+                            <field name="contract_expiry" invisible="use_partner_credit_limit == False"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

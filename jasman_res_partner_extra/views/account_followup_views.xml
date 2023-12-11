@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="customer_statements_search_view_inherit_jasman" model="ir.ui.view">
+            <field name="name">customer.statements.search.view.inherit.jasman</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_followup.customer_statements_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_by']" position="inside">
+                    <filter name="group_account_group_payable" string="Account Payable" domain="[]" context="{'group_by': 'property_account_payable_group_id'}"/>
+                    <filter name="invoice_user_id" string="Billing User" domain="[]" context="{'group_by': 'invoice_user_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
