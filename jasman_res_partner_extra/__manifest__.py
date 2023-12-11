@@ -27,8 +27,8 @@
     ],
     "maintainer": "Odoo, Inc",
     "data": [
-        "data/base_automation.xml",
         "data/ir_action_server.xml",
+        "data/base_automation.xml",
         "views/account_followup_views.xml",
         "views/res_partner_bank_views.xml",
         "views/res_partner_views.xml",
