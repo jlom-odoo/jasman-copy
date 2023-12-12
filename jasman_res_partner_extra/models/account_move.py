@@ -13,12 +13,15 @@ class AccountMove(models.Model):
 
         today = fields.Date.context_today(self)
         for account_move in self:
-            account_move.date_due_pay_day = account_move.needed_terms and max(
-                (k['date_maturity'] for k in account_move.needed_terms.keys() if k),
-                default=False,
-            ) or account_move.invoice_date_due or today
+            if account_move.state == 'draft':
+                account_move.date_due_pay_day = account_move.needed_terms and max(
+                    (k['date_maturity'] for k in account_move.needed_terms.keys() if k),
+                    default=False,
+                ) or account_move.invoice_date_due or today
 
-            if account_move.partner_id.pay_day:
-                diff = days.index(account_move.partner_id.pay_day) - account_move.date_due_pay_day.weekday()
-                diff = diff + 7 if diff < 0 else diff
-                account_move.date_due_pay_day = account_move.date_due_pay_day + timedelta(days=diff)
+                if account_move.partner_id.pay_day:
+                    diff = days.index(account_move.partner_id.pay_day) - account_move.date_due_pay_day.weekday()
+                    diff = diff + 7 if diff < 0 else diff
+                    account_move.date_due_pay_day = account_move.date_due_pay_day + timedelta(days=diff)
+            else:
+                account_move.date_due_pay_day = account_move.date_due_pay_day

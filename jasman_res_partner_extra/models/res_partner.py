@@ -32,6 +32,7 @@ class ResPartner(models.Model):
                                 ('saturday', 'Saturday'),
                                 ('sunday', 'Sunday')], string='Payment Day')
     payment_reference = fields.Char(string='Payment Reference')
+    supplier_payment_reference = fields.Char(string='Supplier Payment Reference')
 
     @api.depends('property_account_payable_id')
     def _compute_property_account_payable_group_id(self):

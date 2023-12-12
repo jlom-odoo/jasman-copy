@@ -13,23 +13,22 @@
                     <attribute name="string">Sales</attribute>
                 </xpath>
                 <xpath expr="//group[@name='sale']" position="inside">
+                    <field name="jasman_id"/>
+                    <field name="confirm_delivery"/>
                     <field name="channel_analytic_account_id"/>
+                    <field name="invoice_user_id"/>
+                    <field name="pay_day"/>
+                    <field name="payment_reference"/>
                 </xpath>
                 <xpath expr="//page[@name='sales_purchases']" position="after">
                     <page name="purchase_jasman" string="Purchases">
                         <group>
                             <group name="supplier" string="Supplier">
-                                <field name="jasman_id"/>
                                 <field name="property_account_payable_id"/>
-                                <field name="confirm_delivery"/>
-                                <field name="invoice_user_id"/>
-                                <field name="use_partner_credit_limit" invisible="1"/>
-                                <field name="guarantee_expiry" invisible="use_partner_credit_limit == False"/>
                                 <field name="supplier_credit_limit"/>
                                 <field name="supplier_payment_way"/>
                                 <field name="supplier_invoice_user_id"/>
-                                <field name="pay_day"/>
-                                <field name="payment_reference"/>
+                                <field name="supplier_payment_reference"/>
                             </group>
                             <group name="purchase" string="Purchase">
                                 <field name="buyer_id" domain="[('share', '=', False)]" widget="many2one_avatar_user"/>
@@ -50,7 +49,9 @@
                 <xpath expr="//page[@name='internal_notes']" position="before">
                     <page name="documents" string="Documents">
                         <group>
+                            <field name="use_partner_credit_limit" invisible="1"/>
                             <field name="contract_expiry" invisible="use_partner_credit_limit == False"/>
+                            <field name="guarantee_expiry" invisible="use_partner_credit_limit == False"/>
                         </group>
                     </page>
                 </xpath>

@@ -1,5 +1,16 @@
 <odoo>
     <data>
+    <record id="customer_statements_tree_view_inherit_jasman" model="ir.ui.view">
+            <field name="name">customer.statements.tree.view.inherit.jasman</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_followup.customer_statements_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='activity_ids']" position="before">
+                    <field name="invoice_user_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
         <record id="customer_statements_search_view_inherit_jasman" model="ir.ui.view">
             <field name="name">customer.statements.search.view.inherit.jasman</field>
             <field name="model">res.partner</field>
