@@ -1,27 +1,19 @@
 from datetime import timedelta
 
-from odoo import fields, models
+from odoo import models
 
+
+DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    date_due_pay_day = fields.Date(string='Due Pay Day', compute='_compute_date_due_pay_day')
+    def action_post(self):
+        res = super(AccountMove, self).action_post()
 
-    def _compute_date_due_pay_day(self):
-        days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-
-        today = fields.Date.context_today(self)
         for account_move in self:
-            if account_move.state == 'draft':
-                account_move.date_due_pay_day = account_move.needed_terms and max(
-                    (k['date_maturity'] for k in account_move.needed_terms.keys() if k),
-                    default=False,
-                ) or account_move.invoice_date_due or today
-
-                if account_move.partner_id.pay_day:
-                    diff = days.index(account_move.partner_id.pay_day) - account_move.date_due_pay_day.weekday()
-                    diff = diff + 7 if diff < 0 else diff
-                    account_move.date_due_pay_day = account_move.date_due_pay_day + timedelta(days=diff)
-            else:
-                account_move.date_due_pay_day = account_move.date_due_pay_day
+            if account_move.partner_id.pay_day:
+                diff = DAYS.index(account_move.partner_id.pay_day) - account_move.invoice_date_due.weekday()
+                diff = diff + 7 if diff < 0 else diff
+                account_move.invoice_date_due = account_move.invoice_date_due + timedelta(days=diff)
+        return res

@@ -16,7 +16,7 @@
                     <field name="jasman_id"/>
                     <field name="confirm_delivery"/>
                     <field name="channel_analytic_account_id"/>
-                    <field name="invoice_user_id"/>
+                    <field name="invoice_user_id" widget="many2one_avatar_user"/>
                     <field name="pay_day"/>
                     <field name="payment_reference"/>
                 </xpath>
@@ -27,7 +27,7 @@
                                 <field name="property_account_payable_id"/>
                                 <field name="supplier_credit_limit"/>
                                 <field name="supplier_payment_way"/>
-                                <field name="supplier_invoice_user_id"/>
+                                <field name="supplier_invoice_user_id" widget="many2one_avatar_user"/>
                                 <field name="supplier_payment_reference"/>
                             </group>
                             <group name="purchase" string="Purchase">

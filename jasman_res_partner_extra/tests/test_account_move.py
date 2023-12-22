@@ -17,10 +17,20 @@ class TestAccountMoveJasman(TransactionCase):
             'move_type': 'out_invoice',
             'invoice_date_due': '2021-01-01',
             'partner_id': partner.id,
+            'invoice_line_ids': [
+                (0, 0, {
+                    'name': 'Test Product 1',
+                    'quantity': 1,
+                    'price_unit': 100,
+                }),
+            ],
         })
 
-        self.assertEqual(invoice.payment_reference, partner.payment_reference)
+        self.assertEqual(invoice.invoice_date_due, date(2021, 1, 1))
+        invoice.action_post()
         self.assertEqual(invoice.invoice_date_due, date(2021, 1, 3))
+        self.assertEqual(invoice.payment_reference, partner.payment_reference)
+        
 
         partner = self.env['res.partner'].create({
             'name': 'Test Partner 2',
