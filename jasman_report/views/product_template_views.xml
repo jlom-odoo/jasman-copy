@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="product_template_only_form_view_inherit_product_template" model="ir.ui.view">
+        <field name="name">product.template.only.form.view.inherit.product.template</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='attribute_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='value_ids']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <!-- <field name="no_parent_category"/> -->
+                <field name="multiple_attribute_values"/>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="attributes">
+                <attribute name="string">Minor Group</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
