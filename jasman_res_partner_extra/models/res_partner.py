@@ -12,6 +12,10 @@ class ResPartner(models.Model):
                                                     comodel_name='account.account',
                                                     compute='_compute_property_account_payable_group_id',
                                                     store=True)
+    followup_responsible_group_id = fields.Many2one(string='Responsible Group',
+                                              comodel_name='res.users',
+                                              compute='_compute_followup_responsible_group_id',
+                                              store=True)
     channel_analytic_account_id = fields.Many2one(comodel_name='account.analytic.account',
                                                   string='Channel Account')
     confirm_delivery = fields.Boolean(string='Delivery Appointment')
@@ -38,3 +42,8 @@ class ResPartner(models.Model):
     def _compute_property_account_payable_group_id(self):
         for account in self:
             account.property_account_payable_group_id = account.property_account_payable_id
+
+    @api.depends('followup_responsible_id')
+    def _compute_followup_responsible_group_id(self):
+        for account in self:
+            account.followup_responsible_group_id = account.followup_responsible_id

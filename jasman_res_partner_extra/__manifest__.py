@@ -17,7 +17,8 @@
     """,
     "category": "Custom Development",
     "version": "1.0.0",
-    "author": "Odoo, Inc",
+    "author": "Odoo Development Services",
+    "maintainer": "Odoo Development Services",
     "website": "https://www.odoo.com/",
     "license": "OPL-1",
     "depends": [
@@ -25,7 +26,6 @@
         "account_followup",
         "web_studio",
     ],
-    "maintainer": "Odoo, Inc",
     "data": [
         "data/ir_action_server.xml",
         "data/base_automation.xml",
