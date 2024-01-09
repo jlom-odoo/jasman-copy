@@ -2,19 +2,20 @@
     "name": "Jasman Extra Fields",
     "summary": """Jasman: Extra Fields""",
     "description": """
-        Jasman: add fields to crm.team, res.user and l10n_mx_edi.payment.method
+        Jasman: add fields to crm.team, res.user and account.payment.term
 
-        Developer: ELCE
+        Developers: ELCE, GECM
         Ticket ID: 3587114
     """,
-    "author": "Odoo PS",
+    "author": "Odoo Inc",
+    "maintainer": "Odoo Inc",
     "website": "https://www.odoo.com",
     "category": "Custom Development",
     "version": "1.0",
-    "depends": ["crm", "l10n_mx_edi"],
+    "depends": ["crm", "account"],
     "data": [
         "views/crm_team.xml",
-        "views/payment_method.xml",
+        "views/account_payment_term_views_inherit.xml",
         "views/res_user.xml",
     ],
     "license": "OPL-1",
