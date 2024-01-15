@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="customer_statements_search_view_inherit_jasman" model="ir.ui.view">
+            <field name="name">customer.statements.search.view.inherit.jasman</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_followup.customer_statements_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_by']" position="inside">
+                    <filter name="followup_responsible_group_id" string="Responsible" domain="[]" context="{'group_by': 'followup_responsible_group_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
