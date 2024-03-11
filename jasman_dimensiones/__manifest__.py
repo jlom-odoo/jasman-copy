@@ -15,7 +15,6 @@
     "version": "1.0",
     "depends": ["account", "crm", "l10n_mx_edi"],
     "data": [
-        "views/crm_team.xml",
         "views/payment_method.xml",
         "views/res_user.xml",
     ],

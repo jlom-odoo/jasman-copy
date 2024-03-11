@@ -14,11 +14,16 @@ class AccountMoveLine(models.Model):
     @api.model
     def _build_analytic_distribution(self, move):
         ceco_account = self.env.user.ceco_analytic_account_id.id
-        channel_account = self.env.user.channel_analytic_account_id.id
+        channel_account = move.partner_id.channel_analytic_account_id.id
         zona_account = self.env.user.zona_analytic_account_id.id
         subzona_account = self.env.user.subzona_analytic_account_id.id
         payment_method_account = move.l10n_mx_edi_payment_method_id.analytic_account_id.id
 
+        distribution = ''
+        for account in [ceco_account, channel_account, zona_account, subzona_account, payment_method_account]:
+            if account:
+                distribution += f'{account},'
+                
         return {
-            f'{ceco_account},{channel_account},{zona_account},{subzona_account},{payment_method_account}': 100
+            f'{distribution[:-1]}': 100,
         }
