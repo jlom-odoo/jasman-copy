@@ -12,6 +12,7 @@
     'category': 'Custom Developments',
     'version': '1.0.0',
     'data': [
+        'views/fleet_vehicle_views.xml',
         'views/stock_picking_batch_views.xml',
         'views/stock_picking_views.xml',
     ],

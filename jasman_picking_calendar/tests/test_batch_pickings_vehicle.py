@@ -32,9 +32,11 @@ class TestBatchPickingVehicles(TestBatchPicking):
         })
         self.picking_client_1.write({
             'vehicle_id': vehicle_1.id,
+            'batch_id': False,
         })
         self.picking_client_2.write({
             'vehicle_id': vehicle_2.id,
+            'batch_id': False
         })
         batch.write({
             'picking_ids': [Command.link(self.picking_client_1.id)]
