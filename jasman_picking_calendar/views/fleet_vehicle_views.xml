@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="fleet_vehicle_tag_view_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.tag.tree</field>
+        <field name="model">fleet.vehicle.tag</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_tag_view_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='color']" position="after">
+                <field name="is_internal" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
