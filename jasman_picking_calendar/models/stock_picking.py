@@ -6,7 +6,7 @@ class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
 
-    vehicle_id = fields.Many2one(comodel_name='fleet.vehicle', domain=[('tag_ids.is_internal', '=', 'True')])
+    vehicle_id = fields.Many2one(comodel_name='fleet.vehicle')
 
     @api.constrains('vehicle_id', 'batch_id')
     def _check_same_vehicle_id(self):

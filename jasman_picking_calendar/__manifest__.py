@@ -12,12 +12,12 @@
     'category': 'Custom Developments',
     'version': '1.0.0',
     'data': [
-        'views/fleet_vehicle_views.xml',
         'views/stock_picking_batch_views.xml',
         'views/stock_picking_views.xml',
     ],
     'depends': [
         'fleet',
+        'l10n_mx_edi_stock',
         'stock_picking_batch',
         ],
     'license': 'OPL-1',
