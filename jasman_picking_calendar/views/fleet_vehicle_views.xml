@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_tag_view_view_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='color']" position="after">
-                <field name="internal" optional="hide"/>
+                <field name="is_internal" optional="hide"/>
             </xpath>
         </field>
     </record>
