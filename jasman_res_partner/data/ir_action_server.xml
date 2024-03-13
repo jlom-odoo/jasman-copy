@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <record id="action_server_set_payment_reference" model="ir.actions.server">
+        <field name="name">Set Partner Payment Reference</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="state">code</field>
+        <field name="code"><![CDATA[
+for record in records:
+    if record.partner_id.payment_reference:
+        record.write({'payment_reference': record.partner_id.payment_reference})
+]]>
+        </field>
+    </record>
+</odoo>
