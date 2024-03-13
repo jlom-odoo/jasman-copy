@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
 
@@ -12,4 +12,4 @@ class StockPicking(models.Model):
         for picking in self:
             if picking.batch_id:
                 if picking.vehicle_id != picking.batch_id.vehicle_id or len(picking.batch_id.mapped('picking_ids.vehicle_id')) > 1:
-                    raise ValidationError('All pickings from a batch must have the same vehicle.')
+                    raise ValidationError(_('All pickings from a batch must have the same vehicle.'))
