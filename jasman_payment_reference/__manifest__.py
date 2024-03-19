@@ -18,7 +18,7 @@
     'license': 'OPL-1',
     'depends': [
         'fleet',
-        'jasman_crm_extra_fields',
+        'jasman_dimensiones',
         'jasman_res_partner',
     ],
     'data': [
