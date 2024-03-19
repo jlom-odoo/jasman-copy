@@ -7,7 +7,7 @@ class StockMoveLot(models.Model):
 
     dot_id = fields.Char()
     lot_creation_date = fields.Date(compute='_compute_lot_creation_date')
-    name = fields.Char(compute='_compute_name')
+    name = fields.Char(compute='_compute_name', store=True)
 
     @api.depends('dot_id', 'product_id.default_code')
     def _compute_name(self):
