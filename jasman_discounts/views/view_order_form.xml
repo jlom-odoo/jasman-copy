@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.custom.jasman</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='company_id']" position="after">
+                <field name="amount_discount" />
+                <field name="reduced_price" readonly="true"/>
+                <field name="promotion_ids"
+                widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <button name="remove_discounts_from_sale_order"
+                        class="btn btn-primary"
+                        type="object">Delete discounts</button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
