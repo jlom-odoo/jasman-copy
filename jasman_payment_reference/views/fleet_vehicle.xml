@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="fleet_vehicle_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.view.form.inherit.jasman</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vin_sn']" position="after">
+                <field name="vehicle_ref"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
