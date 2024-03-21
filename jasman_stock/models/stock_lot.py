@@ -11,16 +11,11 @@ class StockMoveLot(models.Model):
 
     @api.depends('product_id','lot_creation_date')
     def _compute_expiration_date(self):
-      super()._compute_expiration_date()
-      for lot in self.filtered(lambda _lot: _lot.product_id.use_expiration_date and _lot.lot_creation_date):
-              duration = lot.product_id.product_tmpl_id.expiration_time
-              lot.expiration_date = lot.lot_creation_date + timedelta(days=duration)
         super()._compute_expiration_date()
-        for lot in self:
-            if lot.product_id.use_expiration_date and lot.lot_creation_date:
-                duration = lot.product_id.product_tmpl_id.expiration_time
-                lot.expiration_date = lot.lot_creation_date + timedelta(days=duration)
-
+        for lot in self.filtered(lambda _lot: _lot.product_id.use_expiration_date and _lot.lot_creation_date):
+            duration = lot.product_id.product_tmpl_id.expiration_time
+            lot.expiration_date = lot.lot_creation_date + timedelta(days=duration)
+        
     @api.depends('dot_id', 'product_id.default_code')
     def _compute_name(self):
         for lot in self:
