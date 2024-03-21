@@ -9,7 +9,7 @@
     "website": "https://www.odoo.com",
     "category": "Custom Development",
     "version": "1.0.0",
-    "depends": ["stock"],
+    "depends": ["stock", "product_expiry"],
     "data": [
         'views/stock_move_views.xml',
         'views/stock_lot_views.xml'
