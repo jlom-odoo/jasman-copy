@@ -1,0 +1,12 @@
+<odoo>
+    <record id="loyalty_reward_view_form" model="ir.ui.view">
+        <field name="name">loyalty.reward.view.form.custom.jasman</field>
+        <field name="model">loyalty.reward</field>
+        <field name="inherit_id" ref="loyalty.loyalty_reward_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='discount_product_domain']" position="after">
+                <field name="discount_sale_line_domain" groups="base.group_no_one" widget="domain" options="{'model': 'sale.order.line', 'in_dialog': true}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
