@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="view_order_form" model="ir.ui.view">
+    <field name="name">view.order.form.inherit.jasman.llantas.negadas</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//notebook" position="inside">
+        <page name="missing_tires" string="Missing Tires">
+            <field name="missing_tire_ids">
+                <tree>
+                    <field name="product_tmpl_id" string="Product"/>
+                    <field name="quantity"/>
+                    <field name="analytic_account_id"/>
+                </tree>
+            </field>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>

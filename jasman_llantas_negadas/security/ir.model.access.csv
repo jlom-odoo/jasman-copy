@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+jasman_llantas_negadas.access_missing_tire,access_missing_tire,jasman_llantas_negadas.model_missing_tire,base.group_user,1,1,1,1
