@@ -12,6 +12,7 @@
                     <field name="product_tmpl_id" string="Product"/>
                     <field name="quantity"/>
                     <field name="analytic_account_id"/>
+                    <field name="action_to_take"/>
                 </tree>
             </field>
         </page>

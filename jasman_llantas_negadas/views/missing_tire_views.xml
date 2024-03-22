@@ -12,6 +12,7 @@
                     </group>
                     <group>
                         <field name="analytic_account_id"/>
+                        <field name="action_to_take"/>
                     </group>
                 </group>
             </form>

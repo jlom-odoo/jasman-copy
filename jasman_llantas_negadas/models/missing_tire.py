@@ -9,3 +9,11 @@ class MissingTire(models.Model):
     order_id = fields.Many2one(comodel_name="sale.order")
     product_tmpl_id = fields.Many2one(string="Product", comodel_name="product.template")
     quantity = fields.Integer(string="Quantity")
+    action_to_take = fields.Selection(
+        selection=[
+            ("buy_stock", "Suggestion to buy stock"),
+            ("no_stock", "No stock in plant"),
+            ("alternate_codes","Alternate codes"),
+            ("sales","Sales")
+        ]
+    )

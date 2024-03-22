@@ -6,14 +6,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-22 20:37+0000\n"
-"PO-Revision-Date: 2024-03-22 20:37+0000\n"
-"Last-Translator: Luis Acevedo (AALA)\n"
+"POT-Creation-Date: 2024-04-03 22:51+0000\n"
+"PO-Revision-Date: 2024-04-03 22:51+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: jasman_llantas_negadas
+#: model:ir.model.fields,field_description:jasman_llantas_negadas.field_missing_tire__action_to_take
+msgid "Action To Take"
+msgstr "Action a tomar"
+
+#. module: jasman_llantas_negadas
+#: model:ir.model.fields.selection,name:jasman_llantas_negadas.selection__missing_tire__action_to_take__alternate_codes
+msgid "Alternate codes"
+msgstr "Codigos alternos"
 
 #. module: jasman_llantas_negadas
 #: model:ir.model.fields,field_description:jasman_llantas_negadas.field_missing_tire__analytic_account_id
@@ -66,7 +76,14 @@ msgstr "Llantas negadas"
 msgid ""
 "Model to store information about the tires that were not available when "
 "making the sale order."
-msgstr "Modelo para guardar la información de las llantas que no estaban disponible cuando se estaba haciendo la orden de venta."
+msgstr ""
+"Modelo para guardar la información de las llantas que no estaban disponible "
+"cuando se estaba haciendo la orden de venta."
+
+#. module: jasman_llantas_negadas
+#: model:ir.model.fields.selection,name:jasman_llantas_negadas.selection__missing_tire__action_to_take__no_stock
+msgid "No stock in plant"
+msgstr "Sin existencia en planta"
 
 #. module: jasman_llantas_negadas
 #: model:ir.model.fields,field_description:jasman_llantas_negadas.field_missing_tire__order_id
@@ -85,6 +102,16 @@ msgid "Quantity"
 msgstr "Cantidad"
 
 #. module: jasman_llantas_negadas
+#: model:ir.model.fields.selection,name:jasman_llantas_negadas.selection__missing_tire__action_to_take__sales
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: jasman_llantas_negadas
 #: model:ir.model,name:jasman_llantas_negadas.model_sale_order
 msgid "Sales Order"
 msgstr "Orden de venta"
+
+#. module: jasman_llantas_negadas
+#: model:ir.model.fields.selection,name:jasman_llantas_negadas.selection__missing_tire__action_to_take__buy_stock
+msgid "Suggestion to buy stock"
+msgstr "Sugerido a compra stock"
