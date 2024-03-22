@@ -70,7 +70,7 @@ class TestAccountMoveJasman(AccountTestInvoicingCommon):
         move = self.env['account.move'].create({'partner_id': partner.id} | self.jasman_invoice_values)
         move.action_post()
 
-        self.assertEqual(move.payment_reference, '20230000140')
+        self.assertEqual(move.payment_reference, '110020230000170')
 
     def test_account_move_payment_reference_case_user(self):
 

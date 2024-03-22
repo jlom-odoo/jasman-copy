@@ -19,10 +19,10 @@
     'depends': [
         'fleet',
         'jasman_dimensiones',
-        'jasman_res_partner',
     ],
     'data': [
         'views/account_move.xml',
         'views/fleet_vehicle.xml',
+        'views/res_partner.xml',
     ],
 }
