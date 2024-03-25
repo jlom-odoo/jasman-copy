@@ -15,10 +15,10 @@ class InspectionLine(models.Model):
             ('green', 'Green'),
             ('yellow', 'Yellow'),
             ('red', 'Red')
-        ], default='green')
+        ], default='none')
 
-    @api.constrains('urgency')
+    @api.constrains('urgency', 'is_task_template')
     def check_urgency_has_start(self):
         for inspection in self:
-            if inspection.urgency == 'none':
+            if inspection.urgency == 'none' and not inspection.is_task_template:
                 raise UserError(_('Inspections must have at least one star'))

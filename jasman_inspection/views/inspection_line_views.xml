@@ -17,7 +17,7 @@
                         <group>
                             <field name="sale_order_id" readonly="1"/>
                             <field name="quotation_template_id"/>
-                            <field name="task_id"/>
+                            <field name="task_id" readonly="1"/>
                             <field name="urgency" widget="priority"/>
                         </group>
                     </group>

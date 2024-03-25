@@ -14,13 +14,13 @@
                 <page string="Inspections" 
                       name="inspection_line_page" 
                       invisible="not product_has_template and not is_template"> 
-                    <field name="inspection_line_ids" readonly="not is_template">
-                        <tree editable="bottom" open_form_view="is_template">
+                    <field name="inspection_line_ids" mode="tree" readonly="not is_template">
+                        <tree>
                             <field name="is_task_template" column_invisible="1"/>
-                            <field name="name" readonly="1"/>
+                            <field name="name" readonly="not is_task_template"/>
                             <field name="urgency" widget="priority"/>
                         </tree>
-                    </field>
+                    </field> 
                 </page>
             </xpath>
             <xpath expr="//field[@name='stage_id']" position="before">
