@@ -10,6 +10,7 @@ class TestMultipleValuesAssignment(ProductAttributesCommon):
         super().setUpClass()
 
         cls.product_template = cls.env['product.template'].create({
+            'multiple_attribute_values': False,
             'name': 'Test Product Template'
         })
 

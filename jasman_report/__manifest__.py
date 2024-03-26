@@ -13,6 +13,7 @@
     'category': 'Custom Developments',
     'version': '1.0.0',
     'data': [
+        'demo/ir_default_demo.xml',
         'report/sale_report_views.xml',
         'report/account_invoice_report_view.xml',
         'views/product_template_views.xml',
