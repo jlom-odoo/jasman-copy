@@ -44,6 +44,8 @@ class AccountMove(models.Model):
         )):
             if move.partner_id.payment_reference:
                 move.payment_reference = move.partner_id.payment_reference
+            elif move.partner_id.parent_id.payment_reference:
+                move.payment_reference = move.partner_id.parent_id.payment_reference
             elif (
                 not move.partner_id.use_partner_credit_limit 
                 and move.l10n_mx_edi_payment_method_id.code
