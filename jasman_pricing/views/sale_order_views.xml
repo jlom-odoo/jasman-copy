@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">view.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='qty_invoiced']" position="after">
+                <field name="can_confirm" column_invisible='1'/>
+                <field name="is_price_blocked" column_invisible='1'/>
+                <field name="is_liberated" string="Liberated" readonly="not can_confirm"/>
+                <field name="min_margin" string="Margin" widget="percentage" optional="hide"/>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='purchase_price']" position="before">
+                <field name="min_price" string="Min. Price" widget='float'/>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']/field/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="readonly">is_price_blocked</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
