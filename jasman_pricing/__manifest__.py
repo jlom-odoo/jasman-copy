@@ -13,13 +13,15 @@
     'category': 'Custom Developments',
     'version': '1.0.0',
     'data': [
-        'demo/ir_default_demo.xml',
         'views/account_move_views.xml',
         'views/product_pricelist_item_views.xml',
         'views/product_views.xml',
         'views/res_users_views.xml',
         'views/sale_order_views.xml',
         ],
+    'demo':[
+        'demo/ir_default_demo.xml'
+    ],
     'depends': ['account','sale_management','sale_margin','purchase'],
     'license': 'OPL-1',
 }

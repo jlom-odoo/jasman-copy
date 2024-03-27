@@ -9,8 +9,10 @@
                 <field name="can_confirm" column_invisible='1'/>
                 <field name="is_price_blocked" column_invisible='1'/>
                 <field name="is_liberated" string="Liberated" readonly="not can_confirm"/>
-                <field name="min_price" string="Min. Price"/>
                 <field name="min_margin" string="Margin" widget="percentage" optional="hide"/>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='purchase_price']" position="before">
+                <field name="min_price" string="Min. Price" widget='float'/>
             </xpath>
             <xpath expr="//page[@name='order_lines']/field/tree/field[@name='price_unit']" position="attributes">
                 <attribute name="readonly">is_price_blocked</attribute>
