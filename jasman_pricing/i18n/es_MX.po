@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jasman_pricing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-27 16:17+0000\n"
+"PO-Revision-Date: 2024-03-27 16:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_res_users__allowed_product_categories_ids
+msgid "Allowed Product Categories"
+msgstr "Categorías de producto permitidas"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_res_users__allowed_product_child_categ_ids
+msgid "Allowed Product Child Categ"
+msgstr "Subcategorías de Producto "
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_sale_order_line__can_confirm
+msgid "Can Confirm"
+msgstr "Puede confirmar"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.res_users_form_view
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.res_users_form_view
+msgid "Child categories"
+msgstr "Subcategorías"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_sale_order_line__is_liberated
+msgid "Is Liberated"
+msgstr "Liberado"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_product_template__is_price_blocked
+#: model:ir.model.fields,field_description:jasman_pricing.field_sale_order_line__is_price_blocked
+msgid "Is Price Blocked"
+msgstr "Bloquear precio"
+
+#. module: jasman_pricing
+#. odoo-python
+#: code:addons/jasman_pricing/models/sale_order_line.py:0
+#, python-format
+msgid "Is liberated: %(old)s -> %(new)s"
+msgstr "Liberado: %(old)s -> %(new)s"
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.view_order_form
+msgid "Liberated"
+msgstr "Liberado"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.view_order_form
+msgid "Margin"
+msgstr "Margen"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_product_pricelist_item__min_margin
+#: model:ir.model.fields,field_description:jasman_pricing.field_sale_order_line__min_margin
+msgid "Min Margin"
+msgstr "Margen Mínimo"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_sale_order_line__min_price
+msgid "Min Price"
+msgstr "Precio Mínimo"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.view_order_form
+msgid "Min. Price"
+msgstr "Precio Mínimo"
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_account_bank_statement_line__use_partner_credit_limit
+#: model:ir.model.fields,field_description:jasman_pricing.field_account_move__use_partner_credit_limit
+#: model:ir.model.fields,field_description:jasman_pricing.field_account_payment__use_partner_credit_limit
+msgid "Partner Limit"
+msgstr ""
+
+#. module: jasman_pricing
+#: model:ir.model.fields,field_description:jasman_pricing.field_sale_order_line__pricelist_item_id
+msgid "Pricelist Item"
+msgstr "Elemento de lista de precios"
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_product_pricelist_item
+msgid "Pricelist Rule"
+msgstr "Regla de la lista de precios"
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_product_category
+msgid "Product Category"
+msgstr "Categoría del producto"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.res_users_form_view
+msgid "Product Category Childs"
+msgstr "Subcategorías"
+
+#. module: jasman_pricing
+#: model_terms:ir.ui.view,arch_db:jasman_pricing.res_users_form_view
+msgid "Product Ctaegory"
+msgstr "Categoría del producto"
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Factura de anticipo de ventas"
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: jasman_pricing
+#. odoo-python
+#: code:addons/jasman_pricing/models/sale_order_line.py:0
+#, python-format
+msgid "The product has been liberated/blocked."
+msgstr "El producto ha sido liberado/bloqueado."
+
+#. module: jasman_pricing
+#. odoo-python
+#: code:addons/jasman_pricing/models/sale_advance_payment_inv.py:0
+#, python-format
+msgid ""
+"This sale cannot be confirmed as is, please change the discounts or request "
+"a price liberation. Some products in the order, doesn't meet the "
+"requirements:  %s "
+msgstr  ""
+"La venta no puede cofirmarse, por favor verifica los descuentos o solicita"
+"una liberación del precio. Algunos productos no cumplen los"
+"requisitos:  %s "
+
+#. module: jasman_pricing
+#. odoo-python
+#: code:addons/jasman_pricing/models/sale_order.py:0
+#, python-format
+msgid ""
+"This sale cannot be confirmed as is, please change the discounts or request "
+"a price liberation. Some products in the order, doesn't meet this "
+"requirements:  %s "
+msgstr ""
+"La venta no puede cofirmarse, por favor verifica los descuentos o solicita"
+"una liberación del precio. Algunos productos no cumplen los"
+"requisitos:  %s "
+
+#. module: jasman_pricing
+#: model:ir.model,name:jasman_pricing.model_res_users
+msgid "User"
+msgstr "Usuario"
