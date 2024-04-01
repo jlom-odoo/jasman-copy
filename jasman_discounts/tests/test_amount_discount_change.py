@@ -31,14 +31,12 @@ class TestSaleOrderAmountDiscount(SaleCommon):
             ]
         })
     
-    def calculate_discount_and_reduced_price(self, amount_discount, initial_price):    
+    def calculate_discount(self, amount_discount, initial_price):    
         expected_discount = (amount_discount / initial_price) * 100
-        expected_reduced_price = initial_price * (1 - (expected_discount / 100))
-        return expected_discount, expected_reduced_price
+        return expected_discount
         
     def test_amount_discount_change(self):
         for line in self.sale_order.order_line:
             line.amount_discount = 100.0
-            expected_discount, expected_reduced_price = self.calculate_discount_and_reduced_price(line.amount_discount,line.price_unit)
+            expected_discount = self.calculate_discount(line.amount_discount,line.price_unit)
             self.assertAlmostEqual(line.discount, expected_discount)
-            self.assertAlmostEqual(line.reduced_price, expected_reduced_price)

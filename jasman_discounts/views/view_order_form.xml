@@ -5,11 +5,11 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//tree/field[@name='company_id']" position="after">
+            <xpath expr="//tree/field[@name='discount']" position="after">
                 <field name="amount_discount" />
-                <field name="reduced_price" readonly="true"/>
                 <field name="promotion_ids"
-                widget="many2many_tags"/>
+                widget="many2many_tags" optional="hide"/>
+                <field name="is_reward_line" invisible="True"/>
             </xpath>
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <button name="remove_discounts_from_sale_order"
