@@ -1,0 +1,241 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jasman_inspection
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-26 15:45+0000\n"
+"PO-Revision-Date: 2024-03-26 15:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/sale_order.py:0
+#, python-format
+msgid "%s inspection opportunity"
+msgstr "Oportunidad de Inspección de %s"
+
+#. module: jasman_inspection
+#: model_terms:ir.ui.view,arch_db:jasman_inspection.view_task_form2
+msgid "Add to Order"
+msgstr "Añadir a la Orden"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_crm_stage
+msgid "CRM Stages"
+msgstr "Etapas del CRM"
+
+#. module: jasman_inspection
+#: model_terms:ir.ui.view,arch_db:jasman_inspection.view_order_form
+msgid "Create Extra Quote"
+msgstr "Crear nueva Cotización"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__display_name
+msgid "Display Name"
+msgstr "Nombre en Pantalla"
+
+#. module: jasman_inspection
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__inspection_line__urgency__green
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__sale_order_option__urgency__green
+msgid "Green"
+msgstr "Verde"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_sale_order__has_additional_optional_line
+msgid "Has Additional Optional Line"
+msgstr "Tiene Linea Opcional Adicional"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_inspection_line
+msgid "Inspection"
+msgstr "Inspección"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_project_task__inspection_line_ids
+msgid "Inspection Line"
+msgstr "Línea de Inspección"
+
+#. module: jasman_inspection
+#: model_terms:ir.ui.view,arch_db:jasman_inspection.view_task_form2
+msgid "Inspections"
+msgstr "Inspecciones"
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/inspection_line.py:0
+#, python-format
+msgid "Inspections must have at least one star"
+msgstr "Las Inspecciones deben tener almenos una estrella"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_sale_order_line__is_additional
+#: model:ir.model.fields,field_description:jasman_inspection.field_sale_order_option__is_additional
+msgid "Is Additional"
+msgstr "Es Adicional"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_crm_stage__is_inspection_stage
+msgid "Is Inspection Stage"
+msgstr "Es Etapa de Inspección"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_product_product__is_inspection_task
+#: model:ir.model.fields,field_description:jasman_inspection.field_product_template__is_inspection_task
+#: model:ir.model.fields,field_description:jasman_inspection.field_project_task__product_has_template
+msgid "Is Inspection Task"
+msgstr "Es Tarea de Inspección"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__is_task_template
+#: model:ir.model.fields,field_description:jasman_inspection.field_project_task__is_template
+msgid "Is Template"
+msgstr "Es Plantilla"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/sale_order.py:0
+#, python-format
+msgid "New Opportunity"
+msgstr "Nueva Oportunidad"
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/project_task.py:0
+#, python-format
+msgid "New Quotation"
+msgstr "Nueva Cotización"
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/project_task.py:0
+#, python-format
+msgid "No new products were added"
+msgstr "Ningún nuevo producto fue añadido"
+
+#. module: jasman_inspection
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__inspection_line__urgency__none
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__sale_order_option__urgency__none
+msgid "None"
+msgstr "Ninguna"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__sale_order_id
+msgid "Order Reference"
+msgstr "Referencia de Orden"
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/project_task.py:0
+#, python-format
+msgid "Order already contains the products from the inspetions."
+msgstr "La Orden ya contiene los productos de la inspección."
+
+#. module: jasman_inspection
+#. odoo-python
+#: code:addons/jasman_inspection/models/sale_order.py:0
+#, python-format
+msgid "Please first set an Inspection CRM Stage."
+msgstr "Por favor primero escoja una etapa de inspección de CRM."
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__quotation_template_id
+msgid "Quotation Template"
+msgstr "Plantilla de Cotización"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_sale_order_template_option
+msgid "Quotation Template Option"
+msgstr "Opción de plantilla de cotización"
+
+#. module: jasman_inspection
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__inspection_line__urgency__red
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__sale_order_option__urgency__red
+msgid "Red"
+msgstr "Rojo"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_sale_order_option
+msgid "Sale Options"
+msgstr "Opciones de venta"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: jasman_inspection
+#: model_terms:ir.ui.view,arch_db:jasman_inspection.inspection_line_form
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: jasman_inspection
+#: model:ir.model,name:jasman_inspection.model_project_task
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__task_id
+msgid "Task"
+msgstr "Tarea"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_product_product__template_task_id
+#: model:ir.model.fields,field_description:jasman_inspection.field_product_template__template_task_id
+msgid "Task Template"
+msgstr "Plantilla de Tarea"
+
+#. module: jasman_inspection
+#: model:ir.model.fields,field_description:jasman_inspection.field_inspection_line__urgency
+#: model:ir.model.fields,field_description:jasman_inspection.field_sale_order_option__urgency
+msgid "Urgency"
+msgstr "Urgencia"
+
+#. module: jasman_inspection
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__inspection_line__urgency__yellow
+#: model:ir.model.fields.selection,name:jasman_inspection.selection__sale_order_option__urgency__yellow
+msgid "Yellow"
+msgstr "Amarillo"

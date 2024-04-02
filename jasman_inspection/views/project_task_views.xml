@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_task_form2" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//field[@name='project_id']" position="after">
+                <field name="is_template" groups="project.group_project_manager"/>
+                <field name="is_template" invisible="1"/>
+                <field name="product_has_template" invisible="1"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Inspections" 
+                      name="inspection_line_page" 
+                      invisible="not product_has_template and not is_template"> 
+                    <field name="inspection_line_ids" readonly="not is_template">
+                        <tree editable="bottom" open_form_view="is_template">
+                            <field name="is_task_template" column_invisible="1"/>
+                            <field name="name" readonly="1"/>
+                            <field name="urgency" widget="priority"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <button name="add_to_order" string="Add to Order" type="object" class="oe_stat_button" invisible="not sale_line_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
