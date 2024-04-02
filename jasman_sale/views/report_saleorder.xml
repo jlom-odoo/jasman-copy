@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="jasman_sale_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@name='signature']" position="after">
+            <div t-if="doc.vehicle_front">
+                <img t-att-src="image_data_uri(doc.vehicle_front)" width="500" height="270" class="rounded mx-auto d-block my-4"/>
+            </div>
+            <div t-if="doc.vehicle_back">
+                <img t-att-src="image_data_uri(doc.vehicle_back)" width="500" height="270" class="rounded mx-auto d-block my-4"/>
+            </div>
+            <div t-if="doc.vehicle_right">
+                <img t-att-src="image_data_uri(doc.vehicle_right)" width="500" height="270" class="rounded mx-auto d-block my-4"/>
+            </div>
+            <div t-if="doc.vehicle_left">
+                <img t-att-src="image_data_uri(doc.vehicle_left)" width="500" height="270" class="rounded mx-auto d-block my-4"/>
+            </div>
+            <div t-if="doc.vehicle_trunk">
+                <img t-att-src="image_data_uri(doc.vehicle_trunk)" width="500" height="270" class="rounded mx-auto d-block my-4"/>
+            </div>
+            <div t-if="doc.vehicle_dashboard">
+                <img t-att-src="image_data_uri(doc.vehicle_dashboard)" width="500" height="270" class="rounded mx-auto d-block my-4"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
