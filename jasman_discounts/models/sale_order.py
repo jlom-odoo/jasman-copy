@@ -381,9 +381,10 @@ class SaleOrder(models.Model):
             reward_dict[next(iter(reward_dict))]['points_cost'] = point_cost
         # Returning .values() directly does not return a subscribable list
         
-        #ADDED: change quantity of discount line to 0 so there is no suibstraction
-        if reward.program_id.line_discount:
+        #PATCH BEGINS: change quantity of discount line to 0 so there is no substraction
+        if reward.program_id:
             for key, reward_data in reward_dict.items():
                 reward_data['product_uom_qty'] = 0.0
+        #PATCH ENDS
         
         return list(reward_dict.values())
