@@ -1,5 +1,6 @@
 from odoo import api, fields, models, _
 from odoo.fields import Command
+from odoo.exceptions import ValidationError
 
 
 class Task(models.Model):
@@ -11,6 +12,8 @@ class Task(models.Model):
 
     def add_to_order(self):
         self.ensure_one()
+        if self.inspection_line_ids.filtered(lambda inspection: inspection.urgency == 'none'):
+            raise ValidationError(_("You need to evaluate all inspections before adding products."))
         products_in_order = self.mapped('sale_line_id.order_id.sale_order_option_ids.product_id')
         priority_inspections = self.inspection_line_ids.\
                 filtered(lambda inspection: inspection.urgency in ['yellow', 'red'])
