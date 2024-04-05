@@ -1,4 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 sign_template_base_admin,sign.template base admin,sign.model_sign_template,base.group_system,1,1,1,1
 sign_template_sales_admin,sign.template sales admin,sign.model_sign_template,sales_team.group_sale_manager,1,1,1,1
-sign_template_sales_user,sign.template sales user,sign.model_sign_template,sales_team.sales_team.group_sale_salesman,1,0,0,0
+sign_template_sales_user,sign.template sales user,sign.model_sign_template,sales_team.group_sale_salesman,1,0,0,0
