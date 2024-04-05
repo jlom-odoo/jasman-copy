@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.jasman</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="vehicle_id" required="is_vehicle_required" invisible="not is_vehicle_required"/>
+                <field name="vehicle_odometer" invisible="not is_vehicle_required" readonly="state == 'sale'"/>
+                <field name="vehicle_color" invisible="not is_vehicle_required"/>
+                <field name="vehicle_model_year" invisible="not is_vehicle_required"/>
+                <field name="vehicle_vin_sn" invisible="not is_vehicle_required"/>
+                <field name="vehicle_engine_number" invisible="not is_vehicle_required"/>
+                <field name="salesperson_department_id" invisible="True"/>
+            </xpath>
+            <xpath expr="//group[@name='sales_person']" position="inside">
+                <field name="is_vehicle_required"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_template_id']" position="before">
+                <field name="product_domain_filter" column_invisible="True"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_template_id']" position="attributes">
+                <attribute name="domain">product_domain_filter</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_template_id']" position="after">
+                <field name="technician_id" readonly="product_type != 'service'" domain="[('department_id','=',parent.salesperson_department_id)]"/>
+            </xpath>
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page string="Documents" name="vehicle_documents">
+                    <group name="sale_documents">
+                        <group name="vehicle_photos" string="Vehicle Photos" invisible="not is_vehicle_required">
+                            <field name="vehicle_front" widget="image" options='{"size": [200, 200]}'/>
+                            <field name="vehicle_back" widget="image" options='{"size": [200, 200]}'/>
+                            <field name="vehicle_right" widget="image" options='{"size": [200, 200]}'/>
+                            <field name="vehicle_left" widget="image" options='{"size": [200, 200]}'/>
+                            <field name="vehicle_trunk" widget="image" options='{"size": [200, 200]}'/>
+                            <field name="vehicle_dashboard" widget="image" options='{"size": [200, 200]}'/>
+                        </group>
+                        <group name="customer_documents" string="Documents Required by Client">
+                            <field name="has_doc_authorization" invisible="1"/>
+                            <field name="file_authorization_filename" invisible="1"/>
+                            <field name="has_doc_survey" invisible="1"/>
+                            <field name="file_survey_filename" invisible="1"/>
+                            <field name="has_doc_identification" invisible="1"/>
+                            <field name="file_identification_filename" invisible="1"/>
+                            <field name="has_doc_circulation_card" invisible="1"/>
+                            <field name="file_circulation_card_filename" invisible="1"/>
+                            <field name="has_doc_picture_evidence" invisible="1"/>
+                            <field name="file_picture_evidence_filename" invisible="1"/>
+                            <field name="has_doc_signed_invoice" invisible="1"/>
+                            <field name="file_signed_invoice_filename" invisible="1"/>
+                            <field name="file_authorization" filename="file_authorization_filename" invisible="not has_doc_authorization"/>
+                            <field name="file_survey" filename="file_survey_filename" invisible="not has_doc_survey"/>
+                            <field name="file_identification" filename="file_identification_filename" invisible="not has_doc_identification"/>
+                            <field name="file_circulation_card" filename="file_circulation_card_filename" invisible="not has_doc_circulation_card"/>
+                            <field name="file_picture_evidence" filename="file_picture_evidence_filename" invisible="not has_doc_picture_evidence"/>
+                            <field name="file_signed_invoice" filename="file_signed_invoice_filename" invisible="not has_doc_signed_invoice"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//button[@name='action_preview_sale_order']" position="before">
+                <button name="action_create_contract" string="Generate Contract" type="object" class="btn-secondary"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_contract"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-pencil-square-o"
+                    invisible="contract_count == 0">
+                    <field name="contract_count" widget="statinfo" string="Contracts"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="model_sale_order_download_client_documents" model="ir.actions.server">
+        <field name="name">Download Client Documentation</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_download_client_documents()</field>
+    </record>
+</odoo>

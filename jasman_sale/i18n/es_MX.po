@@ -1,0 +1,624 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jasman_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-04 15:53+0000\n"
+"PO-Revision-Date: 2024-04-04 15:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"A contract template must be set in the app settings before creating any "
+"contracts"
+msgstr ""
+"Una plantilla de contrato debe de ser seleccionada en los ajustes de la "
+"aplicación antes de crear contratos"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_crm_team__journal_id
+msgid "Account Journal"
+msgstr "Diario de Facturación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__contract_count
+msgid "Amount of Contracts"
+msgstr "Cantidad de Contratos"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_authorization
+#, python-format
+msgid "Authorization"
+msgstr "Autorización"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Authorization File"
+msgstr "Archivo de Autorización"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sign_item_type__sale_auto_field
+msgid "Auto-fill Sale Field"
+msgstr "Campo de Venta Auto-llenar"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_circulation_card
+#, python-format
+msgid "Circulation Card"
+msgstr "Carta de Circulación"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Circulation Card File"
+msgstr "Archivo de Carta de Circulación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,help:jasman_sale.field_sale_order__vehicle_color
+msgid "Color of the vehicle"
+msgstr "Color del vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__combined_documentation
+msgid "Combined Documentation"
+msgstr "Documentación Combinada"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__contract_ids
+#: model_terms:ir.ui.view,arch_db:jasman_sale.sale_order_form_inherit_jasman
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Contracts for %s"
+msgstr "Contratos para %s"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_config_settings__sign_template_id
+msgid "Default Contract Template for Sales"
+msgstr "Plantilla por Defecto"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.res_partner_form_inherit_jasman
+msgid "Documentation"
+msgstr "Documentación"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.sale_order_form_inherit_jasman
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.sale_order_form_inherit_jasman
+msgid "Documents Required by Client"
+msgstr "Documentos Requeridos por el Cliente"
+
+#. module: jasman_sale
+#: model:ir.actions.server,name:jasman_sale.model_sale_order_download_client_documents
+msgid "Download Client Documentation"
+msgstr "Descargar Documentación del Cliente"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_fleet_vehicle__engine_number
+msgid "Engine Number"
+msgstr "Número de Motor"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_authorization_filename
+msgid "File Authorization Filename"
+msgstr "Nombre de Archivo Autorización"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_circulation_card_filename
+msgid "File Circulation Card Filename"
+msgstr "Nombre de Archivo Carta de Circulación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_identification_filename
+msgid "File Identification Filename"
+msgstr "Nombre de Archivo Identificación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_picture_evidence_filename
+msgid "File Picture Evidence Filename"
+msgstr "Nombre de Archivo Evidencia Fotográfica"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_signed_invoice_filename
+msgid "File Signed Invoice Filename"
+msgstr "Nombre de Archivo Factura Firmada"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_survey_filename
+msgid "File Survey Filename"
+msgstr "Nombre de Archivo Encuesta"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_crm_team__property_account_position_id
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Posición fiscal"
+
+#. module: jasman_sale
+#: model:ir.model.fields,help:jasman_sale.field_sale_order__fiscal_position_id
+msgid ""
+"Fiscal positions are used to adapt taxes and accounts for particular "
+"customers or sales orders/invoices.The default value comes from the "
+"customer."
+msgstr ""
+"Las posiciones fiscales se utilizan para adaptar impuestos y cuentas para "
+"determinados clientes u órdenes de venta o facturas. El valor predeterminado"
+" viene del cliente."
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_id
+msgid "Fleet Vehicle"
+msgstr "Vehículo de Flota"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.sale_order_form_inherit_jasman
+msgid "Generate Contract"
+msgstr "Generar Contrato"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_identification
+#, python-format
+msgid "Identification"
+msgstr "Identificación"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Identification File"
+msgstr "Archivo de Identificación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,help:jasman_sale.field_sale_order__journal_id
+msgid ""
+"If set, the SO will invoice in this journal; otherwise the sales journal "
+"with the lowest sequence is used."
+msgstr ""
+"Si se establece, las órdenes de venta se facturarán en este diario. De lo "
+"contrario, se utilizará el diario de ventas con la secuencia más baja."
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_partner__has_doc_authorization
+#: model:ir.model.fields,field_description:jasman_sale.field_res_users__has_doc_authorization
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__has_doc_authorization
+msgid "Include Authorization"
+msgstr "Incluir Autorización"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_partner__has_doc_circulation_card
+#: model:ir.model.fields,field_description:jasman_sale.field_res_users__has_doc_circulation_card
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__has_doc_circulation_card
+msgid "Include Circulation Card"
+msgstr "Incluir Carta de Circulación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_partner__has_doc_identification
+#: model:ir.model.fields,field_description:jasman_sale.field_res_users__has_doc_identification
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__has_doc_identification
+msgid "Include Identification"
+msgstr "Incluir Identificación"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_partner__has_doc_picture_evidence
+#: model:ir.model.fields,field_description:jasman_sale.field_res_users__has_doc_picture_evidence
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__has_doc_picture_evidence
+msgid "Include Photo Evidence"
+msgstr "Incluir Evidencia Fotográfica"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_partner__has_doc_signed_invoice
+#: model:ir.model.fields,field_description:jasman_sale.field_res_users__has_doc_signed_invoice
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__has_doc_signed_invoice
+msgid "Include Signed Invoice"
+msgstr "Incluir Factura Firmada"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_res_partner__has_doc_survey
+#: model:ir.model.fields,field_description:jasman_sale.field_res_users__has_doc_survey
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__has_doc_survey
+msgid "Include Survey"
+msgstr "Incluir Encuesta"
+
+#. module: jasman_sale
+#: model:sign.item.type,name:jasman_sale.sign_item_type_insurance
+#: model:sign.item.type,placeholder:jasman_sale.sign_item_type_insurance
+msgid "Insurance"
+msgstr "Seguro"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_crm_team__insurance_company
+msgid "Insurance Company"
+msgstr "Aseguradora"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__journal_id
+msgid "Invoicing Journal"
+msgstr "Diario de facturación"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_picture_evidence
+msgid "Photo Evidence"
+msgstr "Evidencia Fotográfica"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Picture Evidence"
+msgstr "Evidencia Fotográfica"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Picture Evidence File"
+msgstr "Archivo de Evidencia Fotográfica"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_crm_team__policy_number
+#: model:sign.item.type,name:jasman_sale.sign_item_type_policy_number
+#: model:sign.item.type,placeholder:jasman_sale.sign_item_type_policy_number
+msgid "Policy Number"
+msgstr "Número de Póliza"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_product_template
+msgid "Product"
+msgstr "Producto"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order_line__product_domain_filter
+msgid "Product Domain"
+msgstr "Dominio del Producto"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.res_config_settings_view_form
+msgid "Sale Contracts"
+msgstr "Contratos de Venta"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.res_partner_form_inherit_jasman
+msgid "Sale Documents"
+msgstr "Documentos de Venta"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_product_product__is_sale_mandatory_vehicle
+#: model:ir.model.fields,field_description:jasman_sale.field_product_template__is_sale_mandatory_vehicle
+msgid "Sale Mandatory Vehicle"
+msgstr "Vehículo Requerido para Venta"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sign_template__sale_order_id
+msgid "Sale Order"
+msgstr "Orden de Venta"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.crm_team_form_inherit_jasman
+msgid "Sale Presets"
+msgstr "Preajustes para Ventas"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Reporte del análisis de ventas"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de la orden de venta"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_crm_team
+msgid "Sales Team"
+msgstr "Equipo de ventas"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__salesperson_department_id
+msgid "Salesperson Department"
+msgstr "Departamento del Vendedor"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.res_config_settings_view_form
+msgid "Sign Template for Sales"
+msgstr "Plantilla de Firma para Ventas"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__sign_template_id
+msgid "Sign Template to Copy When Creating Contract"
+msgstr "Plantilla de Firma a Copiar al Crear un Contrato"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_sign_send_request
+msgid "Sign send request"
+msgstr "Firmar la solicitud de envío"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.res_config_settings_view_form
+msgid "Sign template to copy from when creating a contract from a sale order"
+msgstr ""
+"Plantilla de firma a copiar al crear un contrato desde una orden de venta"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_sign_item_type
+msgid "Signature Item Type"
+msgstr "Tipo del elemento de la firma"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_sign_template
+msgid "Signature Template"
+msgstr "Plantilla de firma"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_signed_invoice
+msgid "Signed Invoice"
+msgstr "Factura Firmada"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Signed Invoice File"
+msgstr "Archivo de Factura Firmada"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Some of the required documents are missing"
+msgstr "Algunos documentos requeridos no se asignaron"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__file_survey
+#, python-format
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "Survey File"
+msgstr "Archivo de Encuesta"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order_line__technician_id
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_report__technician_id
+#: model_terms:ir.ui.view,arch_db:jasman_sale.sale_report_search_inherit_jasman
+msgid "Technician"
+msgstr "Técnico"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "The %s was changed"
+msgstr "El %s fue cambiado"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "The client documentation for sale order: %s, is greater than 2 mb"
+msgstr "La documentación de la orden de venta: %s, es mayor a 2 mb"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "The following documents are missing: %s"
+msgstr "Faltan los siguientes documentos: %s"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "The vehicle VIN must be exactly 17 characters long"
+msgstr "El VIN del vehículo debe de tener exáctamente 17 carácteres"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/account_move.py:0
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"The vehicle required field cannot be changed because the following products "
+"are only for sales with vehicle required: %s"
+msgstr ""
+"El campo de vehículo requerido no se puede cambiar porque "
+"los siguientes productos son solo para ventas con vehículo requerido: %s"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/account_move.py:0
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "The vehicle required field was changed"
+msgstr "El campo de vehículo requerido fue cambiado"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"This sale includes a service product which requires a technician to be "
+"assigned"
+msgstr ""
+"Esta venta incluye un producto de servicio que requiere asignar a un técnico"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid ""
+"This sale requires vehicle information to be filled in before confirming"
+msgstr "Esta venta requiere llenar los datos del vehículo antes de confirmar"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "This sale requires vehicle photos to be attached before confirming"
+msgstr ""
+"Esta venta requiere que las fotos del vehículo se incluyan antes de "
+"confirmar"
+
+#. module: jasman_sale
+#: model:ir.model.fields,help:jasman_sale.field_sale_order__vehicle_vin_sn
+msgid "Unique number written on the vehicle motor (VIN/SN number)"
+msgstr "Número único escrito en el motor del vehículo (VIN/Número Serial)"
+
+#. module: jasman_sale
+#: model:ir.model,name:jasman_sale.model_fleet_vehicle
+#: model:ir.model.fields,field_description:jasman_sale.field_account_bank_statement_line__vehicle_id
+#: model:ir.model.fields,field_description:jasman_sale.field_account_move__vehicle_id
+#: model:ir.model.fields,field_description:jasman_sale.field_account_payment__vehicle_id
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_back
+msgid "Vehicle Back Photo"
+msgstr "Foto Trasera del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_color
+msgid "Vehicle Color"
+msgstr "Color"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_dashboard
+msgid "Vehicle Dashboard Photo"
+msgstr "Foto Tablero del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_engine_number
+msgid "Vehicle Engine Number"
+msgstr "Número de Motor del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_front
+msgid "Vehicle Front Photo"
+msgstr "Foto Frontal del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_left
+msgid "Vehicle Left Photo"
+msgstr "Foto Izquierda del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_model_year
+msgid "Vehicle Model Year"
+msgstr "Año de Modelo del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_account_bank_statement_line__vehicle_odometer
+#: model:ir.model.fields,field_description:jasman_sale.field_account_move__vehicle_odometer
+#: model:ir.model.fields,field_description:jasman_sale.field_account_payment__vehicle_odometer
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_odometer
+msgid "Vehicle Odometer"
+msgstr "Odometro del Vehículo"
+
+#. module: jasman_sale
+#: model_terms:ir.ui.view,arch_db:jasman_sale.sale_order_form_inherit_jasman
+msgid "Vehicle Photos"
+msgstr "Fotos del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_account_bank_statement_line__is_vehicle_required
+#: model:ir.model.fields,field_description:jasman_sale.field_account_move__is_vehicle_required
+#: model:ir.model.fields,field_description:jasman_sale.field_account_payment__is_vehicle_required
+#: model:ir.model.fields,field_description:jasman_sale.field_crm_team__is_vehicle_required
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__is_vehicle_required
+msgid "Vehicle Required"
+msgstr "Vehículo Requerido"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_right
+msgid "Vehicle Right Photo"
+msgstr "Foto Derecha del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_trunk
+msgid "Vehicle Trunk Photo"
+msgstr "Foto Cajuela del Vehículo"
+
+#. module: jasman_sale
+#: model:ir.model.fields,field_description:jasman_sale.field_sale_order__vehicle_vin_sn
+msgid "Vehicle VIN"
+msgstr "Número de Chasis"
+
+#. module: jasman_sale
+#: model:ir.model.fields,help:jasman_sale.field_sale_order__vehicle_model_year
+msgid "Year of the model"
+msgstr "Año del Modelo"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "_documentation.pdf"
+msgstr "_documentación.pdf"
+
+#. module: jasman_sale
+#. odoo-python
+#: code:addons/jasman_sale/models/sale_order.py:0
+#, python-format
+msgid "compressed_documentation.zip"
+msgstr "documentación_comprimida.zip"
+
+#. module: jasman_sale
+#: model:sign.item.type,tip:jasman_sale.sign_item_type_insurance
+#: model:sign.item.type,tip:jasman_sale.sign_item_type_policy_number
+msgid "fill in"
+msgstr "llenar"

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="sign.item.type" id="sign_item_type_insurance">
+        <field name="name">Insurance</field>
+        <field name="placeholder">Insurance</field>
+        <field name="sale_auto_field">team_id.insurance_company</field>
+        <field name="item_type">text</field>
+    </record>
+    <record model="sign.item.type" id="sign_item_type_policy_number">
+        <field name="name">Policy Number</field>
+        <field name="placeholder">Policy Number</field>
+        <field name="sale_auto_field">team_id.policy_number</field>
+        <field name="item_type">text</field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_move_form_inherit_jasman" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.jasman</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='header_left_group']" position="inside">
+                <field name="vehicle_id" readonly="state != 'draft'" invisible="not is_vehicle_required"/>
+                <field name="vehicle_odometer" readonly="state != 'draft'" invisible="not is_vehicle_required"/>
+            </xpath>
+            <xpath expr="//group[@name='sale_info_group']" position="inside">
+                <field name="is_vehicle_required" readonly="state != 'draft'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
