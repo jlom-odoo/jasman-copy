@@ -6,6 +6,7 @@ class SaleOrderOption(models.Model):
 
     urgency = fields.Selection([('none', 'None'), ('green', 'Green'), ('yellow', 'Yellow'), ('red', 'Red')])
     is_additional = fields.Boolean()
+    is_present = fields.Boolean(readonly=False)
 
     def button_add_to_order(self):
         self.with_context(from_backend=True).add_option_to_order()

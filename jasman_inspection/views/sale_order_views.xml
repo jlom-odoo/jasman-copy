@@ -10,6 +10,10 @@
             </xpath>
             <xpath expr="//field[@name='sale_order_option_ids']//tree//field[@name='is_present']" position="before">
                 <field name="urgency" widget="priority" readonly="1"/>
+                <field name="is_present" groups="sales_team.group_sale_manager" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_option_ids']" position="attributes">
+                <attribute name="readonly"></attribute>
             </xpath>
             <xpath expr="//button[@id='create_invoice']" position="after">
                 <field name="additional_optional_line_ids" invisible="1"/>
