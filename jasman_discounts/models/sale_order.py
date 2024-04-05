@@ -16,7 +16,7 @@ class SaleOrder(models.Model):
     
     def remove_discounts_from_sale_order(self):
         for order_line in self.order_line:
-            order_line.remove_discounts()              
+            order_line._remove_discounts()              
     
     #OVERRIDE to use sale order line filter for loyalty.rule similarly on how product filter is used
     def _program_check_compute_points(self, programs):
@@ -373,7 +373,7 @@ class SaleOrder(models.Model):
         } for tax, price in discountable_per_tax.items() if price}
         #Write line_discount_dict here to sale.order.line. This means that the best discount was the percentage
         #PATCH BEGINS
-        if line_discount_dict:
+        if line_discount_dict and reward.program_id.line_discount:
             self._write_order_line_discount(line_discount_dict, discount_factor, reward)
         #PATCH ENDS
         # We only assign the point cost to one line to avoid counting the cost multiple times
@@ -381,10 +381,16 @@ class SaleOrder(models.Model):
             reward_dict[next(iter(reward_dict))]['points_cost'] = point_cost
         # Returning .values() directly does not return a subscribable list
         
-        #PATCH BEGINS: change quantity of discount line to 0 so there is no substraction
-        if reward.program_id:
+        #ADDED: change quantity of discount line to 0 so there is no substraction
+        if reward.program_id.line_discount:
             for key, reward_data in reward_dict.items():
-                reward_data['product_uom_qty'] = 0.0
+                reward_data.update(product_uom_qty=0.0, price_unit=0.0)
         #PATCH ENDS
         
         return list(reward_dict.values())
+    
+    def _action_cancel(self):
+        return super(SaleOrder, self.with_context(unlink_rewards=True))._action_cancel()
+    
+    def copy(self, default=None):
+        return super(SaleOrder, self.with_context(unlink_rewards=True)).copy(default)

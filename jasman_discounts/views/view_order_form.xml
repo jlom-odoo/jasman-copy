@@ -5,17 +5,19 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='price_unit']" position="after">
+                <field name="price_reduce_taxexcl" optional="show"/>
+            </xpath>
             <xpath expr="//tree/field[@name='discount']" position="after">
                 <field name="amount_discount" />
                 <field name="promotion_ids"
                 widget="many2many_tags" optional="hide"/>
-                <field name="is_reward_line" invisible="True"/>
+                <field name="is_reward_line" column_invisible="True"/>
             </xpath>
-            <xpath expr="//field[@name='payment_term_id']" position="after">
-                <button name="remove_discounts_from_sale_order"
-                        class="btn btn-primary"
-                        type="object">Delete discounts</button>
-            </xpath>
+            <xpath expr="//button[@name='action_open_reward_wizard']" position="after">
+                <button name="remove_discounts_from_sale_order" class="btn btn-secondary"
+                type="object">Delete discounts</button>
+                </xpath>
         </field>
     </record>
 </odoo>

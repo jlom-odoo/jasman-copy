@@ -11,5 +11,5 @@ class LoyaltyRule(models.Model):
     def _get_valid_order_lines(self, order_lines, rule_order_lines):
         for rule in self:
             rule_order_lines[rule] = order_lines
-            if rule.sale_line_domain != '[]':
+            if rule.sale_line_domain != '[]' and rule.sale_line_domain != False:
                 rule_order_lines[rule] = order_lines.filtered_domain(ast.literal_eval(rule.sale_line_domain))
