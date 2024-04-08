@@ -5,6 +5,9 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <field name="sale_order_template_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
             <notebook position="inside">
                 <page name="order_templates" string="Templates">
                     <field name="sale_order_template_ids"/>
