@@ -14,7 +14,7 @@
     "author": "Odoo Development Services",
     "maintainer": "Odoo Development Services",
     "website": "www.odoo.com",
-    "depends": ["sale"],
+    "depends": ["sale", "sale_management"],
     "data": [
         "views/sale_order_views.xml",
     ],
