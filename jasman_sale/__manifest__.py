@@ -38,11 +38,13 @@
         "sign",
         "hr"
     ],
+    "demo": [
+        "demo/ir_default_demo.xml",
+    ],
     "data": [
         "security/ir.model.access.csv",
         "data/sign_data.xml",
         "data/ir_filters_data.xml",
-        "demo/ir_default_demo.xml",
         "views/account_move_views.xml",
         "views/crm_team_views.xml",
         "views/fleet_vehicle_views.xml",
