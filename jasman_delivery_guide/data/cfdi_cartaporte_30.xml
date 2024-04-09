@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cfdi_cartaporte_30" inherit_id="l10n_mx_edi_stock_30.cfdi_cartaporte_30" primary="True">
+        <xpath expr="//*[name()='cartaporte20:Ubicacion' and @TipoUbicacion='Destino']" position="replace"
+        xmlns:cartaporte20="http://www.sat.gob.mx/CartaPorte20">
+            <t t-foreach="destino" t-as="d">
+                <cartaporte20:Ubicacion
+                    TipoUbicacion="Destino"
+                    t-att-IDUbicacion="d['id_ubicacion']"
+                    t-att-DistanciaRecorrida="d['distancia_recorrida']"
+                    t-att-FechaHoraSalidaLlegada="d['fecha_hora_salida_llegada']"
+                    t-att-RFCRemitenteDestinatario="d['rfc_remitente_destinatario']"
+                    t-att-NumRegIdTrib="d['num_reg_id_trib']"
+                    t-att-ResidenciaFiscal="d['residencia_fiscal']">
+                    <cartaporte20:Domicilio
+                        t-att-Calle="d['domicilio']['calle']"
+                        t-att-CodigoPostal="d['domicilio']['codigo_postal']"
+                        t-att-Estado="d['domicilio']['estado']"
+                        t-att-Pais="d['domicilio']['pais']"
+                        t-att-Municipio="d['domicilio']['municipio']"/>
+                </cartaporte20:Ubicacion>
+            </t>
+        </xpath>
+        <xpath expr="//*[name()='cartaporte20:CantidadTransporta']" position="attributes">
+            <attribute name="t-att-IDOrigen">
+                origen["id_ubicacion"]
+            </attribute>
+            <attribute name="t-att-IDDestino">
+                'DE' + str(move.location_dest_id.id).rjust(6,'0')
+            </attribute>
+        </xpath>
+        <xpath expr="//*[name()='cartaporte20:FiguraTransporte']/t[@t-as='figure']" position="replace"
+        xmlns:cartaporte20="http://www.sat.gob.mx/CartaPorte20">
+            <cartaporte20:TiposFigura
+                t-att-TipoFigura="record.figure_id.type"
+                t-att-RFCFigura="record.figure_id.operator_id.vat"
+                t-att-NumLicencia="record.figure_id.type == '01' and record.figure_id.operator_id.l10n_mx_edi_operator_licence"
+                t-att-NombreFigura="record.figure_id.operator_id.name">
+                <t t-foreach="record.figure_id.part_ids" t-as="part">
+                    <cartaporte20:PartesTransporte t-if="record.figure_id.type in ('02', '03')"
+                        t-att-ParteTransporte="part.code"/>
+                </t>
+            </cartaporte20:TiposFigura>
+        </xpath>
+    </template>
+</odoo>
