@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="stock_picking_batch_form" model="ir.ui.view">
+        <field name="name">stock.picking.batch.view.form.inherit.jasman.delivery.guide</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="before">
+                <field name="l10n_mx_edi_is_cfdi_needed" invisible="1"/>
+                <field name="l10n_mx_edi_cfdi_state" invisible="1"/>
+                <field name="l10n_mx_edi_external_trade" invisible="1"/>
+                <field name="l10n_mx_edi_update_sat_needed" invisible="1"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <field name="is_delivery_guide_possible" invisible="1"/>
+                <button string="Generate Delivery Guide"
+                        name="l10n_mx_edi_action_send_batch_delivery_guide"
+                        type="object"
+                        invisible="not is_delivery_guide_possible or l10n_mx_edi_cfdi_state == 'sent'"/>
+                <button string="Cancel Delivery Guide"
+                        name="l10n_mx_edi_cfdi_try_cancel"
+                        type="object"
+                        invisible="not l10n_mx_edi_is_cfdi_needed or l10n_mx_edi_cfdi_state != 'sent'"/>
+                <button string="Update SAT"
+                        name="l10n_mx_edi_cfdi_try_sat"
+                        type="object"
+                        invisible="not l10n_mx_edi_update_sat_needed"/>
+            </xpath>
+            <xpath expr="//sheet//group/field[@name='scheduled_date']" position="after">
+                <field name="effective_date"/>
+            </xpath>
+            <xpath expr="//field[@name='picking_ids']" position="attributes">
+                <attribute name="default_order">'scheduled_date'</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='page_transfers']" position="after">
+                <page string="Additional Info" name="extra">
+                    <group string="Transport" name="mx_edi_group_transport">
+                        <field name="figure_ids" invisible="1"/>
+                        <field name="l10n_mx_edi_transport_type"/>
+                        <field name="l10n_mx_edi_vehicle_id"
+                               invisible="l10n_mx_edi_transport_type != '01'"
+                               required="l10n_mx_edi_transport_type == '01'"/>
+                        <field name="figure_id"
+                                invisible="l10n_mx_edi_transport_type != '01'"
+                                required="l10n_mx_edi_transport_type == '01'"/>
+                        <field name="l10n_mx_edi_distance"
+                               invisible="l10n_mx_edi_transport_type != '01'"
+                               required="l10n_mx_edi_transport_type == '01'"/>
+                   </group>
+                </page>
+                <page id="edi_documents" string="CFDI" name="page_cfdi" invisible="not l10n_mx_edi_document_ids">
+                    <field name="l10n_mx_edi_document_ids">
+                        <tree create="false" delete="false" edit="false" no_open="1">
+                            <field name="attachment_id" column_invisible="True" on_change="1"/>
+                            <field name="message" column_invisible="True"/>
+                            <field name="retry_button_needed" column_invisible="True"/>
+
+                            <field name="datetime"/>
+                            <field name="state" widget="l10n_mx_edi_document_state" on_change="1"/>
+                            <field name="sat_state" invisible="not sat_state" on_change="1"/>
+
+                            <button name="action_download_file" type="object" string="Download" invisible="not attachment_id"/>
+                            <button name="action_retry" type="object" string="Retry" invisible="not retry_button_needed"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
